@@ -26,32 +26,40 @@ class FizzBuzz
   end
 end
 
-class FizzBuzzTest < Minitest::Test
-  def setup
+describe FizzBuzz do
+  before do
     @fizz_buzz = FizzBuzz.new
   end
 
-  def test_convert_1_to_string_1
-    assert_equal '1', @fizz_buzz.stringify(1)
-  end
+  describe 'test stringify' do
+    describe 'convert multiple of 3 to fizz' do
+      it 'must convert 3 to fizz' do
+        assert_equal 'fizz', @fizz_buzz.stringify(3)
+      end
 
-  def test_convert_2_to_string_2
-    assert_equal '2', @fizz_buzz.stringify(2)
-  end
+      it 'must convert 6 to fizz' do
+        assert_equal 'fizz', @fizz_buzz.stringify(6)
+      end
+    end
 
-  def test_convert_3_to_string_fizz
-    assert_equal 'fizz', @fizz_buzz.stringify(3)
-  end
+    describe 'convert multiple of 5 to buzz' do
+      it 'must convert 5 to buzz' do
+        assert_equal 'buzz', @fizz_buzz.stringify(5)
+      end
 
-  def test_convert_multiple_of_3_to_string_fizz
-    assert_equal 'fizz', @fizz_buzz.stringify(6)
-  end
+      it 'must convert 10 to buzz' do
+        assert_equal 'buzz', @fizz_buzz.stringify(10)
+      end
+    end
 
-  def test_convert_5_to_string_buzz
-    assert_equal 'buzz', @fizz_buzz.stringify(5)
-  end
+    describe 'convert other number to string' do
+      it 'must 1(number) to 1(string)' do
+        assert_equal '1', @fizz_buzz.stringify(1)
+      end
 
-  def test_convert_multiple_of_5_to_string_fizz
-    assert_equal 'buzz', @fizz_buzz.stringify(10)
+      it 'must 2(number) to 2(string)' do
+        assert_equal '2', @fizz_buzz.stringify(2)
+      end
+    end
   end
 end
