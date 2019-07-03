@@ -1,5 +1,6 @@
 # - [ ] 数を文字列に変換する
-#   - [ ] 1を渡すと文字列"1"に変換する
+#   - [x] 1を渡すと文字列"1"に変換する
+#   - [ ] 2を渡すと文字列"2"に変換する
 # - [ ] 3の倍数のときはfizzに変換する
 # - [ ] 5の倍数のときはbuzzに変換する
 # - [ ] 3, 5両方の倍数のときはfizzbuzzに変換する
@@ -11,9 +12,7 @@
 require 'minitest/autorun'
 
 class FizzBuzz
-  def initialize
-
-  end
+  def initialize; end
 
   def stringify(i)
     '1'
@@ -25,8 +24,7 @@ class FizzBuzzTest < Minitest::Test
     # 準備
     fizz_buzz = FizzBuzz.new
     # 実行
-    actual = fizz_buzz.stringify(1)
     # 検証
-    assert_equal '1', actual
+    assert_equal '1', fizz_buzz.stringify(1)
   end
 end
