@@ -37,8 +37,8 @@ describe FizzBuzz do
         assert_equal 'fizz', @fizz_buzz.stringify(3)
       end
 
-      it 'must convert 6 to fizz' do
-        assert_equal 'fizz', @fizz_buzz.stringify(6)
+      it 'must convert 99 to fizz' do
+        assert_equal 'fizz', @fizz_buzz.stringify(99)
       end
     end
 
@@ -47,14 +47,24 @@ describe FizzBuzz do
         assert_equal 'buzz', @fizz_buzz.stringify(5)
       end
 
-      it 'must convert 10 to buzz' do
-        assert_equal 'buzz', @fizz_buzz.stringify(10)
+      it 'must convert 100 to buzz' do
+        assert_equal 'buzz', @fizz_buzz.stringify(100)
+      end
+    end
+
+    describe 'convert multiple of 3 and 5 to fizzbuzz' do
+      it 'must convert 15 to fizzbuzz' do
+        assert_equal 'fizzbuzz', @fizz_buzz.stringify(15)
+      end
+
+      it 'must convert 0 to fizzbuzz' do
+        assert_equal 'fizzbuzz', @fizz_buzz.stringify(0)
       end
     end
 
     describe 'convert other number to string' do
-      it 'must 1(number) to 1(string)' do
-        assert_equal '1', @fizz_buzz.stringify(1)
+      it 'must 101(number) to 101(string)' do
+        assert_equal '101', @fizz_buzz.stringify(101)
       end
 
       it 'must 2(number) to 2(string)' do
